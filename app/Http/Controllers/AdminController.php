@@ -26,7 +26,13 @@ class AdminController extends Controller
 
             'flv',
             'flvRegister',
-            'envFlv'
+            
+            'mer',
+            'merRegister',
+
+            'pas',
+            'pasRegister',
+            
             
         ]]);
     }
