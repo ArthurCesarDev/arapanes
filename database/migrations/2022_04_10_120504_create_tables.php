@@ -18,18 +18,15 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
         });
-        Schema::create('pages', function (Blueprint $table) {
+
+        Schema::create('flvs', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_user');
-            $table->string('slug');
+            $table->string('codigo');
+            $table->string('quantidade');
         });
-        Schema::create('links', function (Blueprint $table) {
+        Schema::create('mers', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_page');
-            $table->integer('slug');
-            $table->integer('order');
-            $table->string('title');
-            $table->string('descricao');
+            $table->string('codigo');
             $table->string('quantidade');
         });
     }
@@ -42,7 +39,8 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('pages');
+        Schema::dropIfExists('flvs');
+        Schema::dropIfExists('mers');
         Schema::dropIfExists('links');
     }
 };
